@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Login page
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth/auth.css') }}">
+{% endblock %}
+
+{% block body %}
+    <form class="auth-form" method="POST">
+
+
+        <div class="title">
+            Log In
+        </div>
+
+        {{ form.hidden_tag() }}
+
+        <div class="input-box">
+            <div class="input-label">Username</div>
+            {{ form.name }}
+        </div>
+
+        <div class="input-box">
+            <div class="input-label">Password</div>
+            {{ form.password }}
+        </div>
+
+        <div class="errors">
+            {% for mes in get_flashed_messages() %}
+                {{ mes }}
+            {% endfor %}
+        </div>
+
+        {{ form.submit }}
+
+        <a class="auth-redirect" href="{{ url_for('register') }}">Don't have an account? Sign up</a>
+
+    </form>
+{% endblock %}

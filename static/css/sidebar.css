@@ -1,0 +1,43 @@
+body {
+    display: flex;
+}
+.sidebar {
+    width: 280px;
+    border-right: 1px solid var(--light-grey-color);
+    height: 100vh;
+    padding: 50px 15px;
+}
+
+.content {
+    padding: 50px;
+    display: block;
+}
+
+.sidebar .user-data {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.sidebar .user-data .logo {
+    width: 50px;
+}
+
+.sidebar .user-data .username {
+    font-weight: 600;
+    color: var(--dark-grey-color);
+}
+
+.sidebar .nav {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    gap: 20px;
+}
+
+.sidebar .nav a {
+    text-decoration: none;
+    color: var(--dark-grey-color);
+    font-size: 14px;
+}
+

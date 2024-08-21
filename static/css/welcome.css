@@ -1,0 +1,64 @@
+@import "base.css";
+
+body {
+    background-color: var(--accent-color);
+    font-family: sans-serif;
+    color: white;
+}
+
+.welcome {
+    margin-top: 200px;
+}
+
+.welcome .logo {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+}
+
+.welcome .title {
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.welcome .subtitle {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.welcome .auth-btns {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.welcome .auth-btns .log-btn,
+.welcome .auth-btns .reg-btn {
+    background-color: #fff;
+    padding: 17px 0;
+    width: 190px;
+    text-align: center;
+    border-radius: 7px;
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 18px;
+    border: 2px solid white;
+    transition: 0.1s;
+}
+
+.welcome .auth-btns .reg-btn {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.welcome .auth-btns .log-btn:hover,
+.welcome .auth-btns .reg-btn:hover {
+    scale: 1.05;
+    transition: 0.1s;
+}

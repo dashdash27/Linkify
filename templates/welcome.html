@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Smart Study
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/welcome.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="welcome">
+        <img src="{{ url_for('static', filename='img/logo/logo.png') }}" alt="logo" class="logo">
+        <div class="title">Study Smart</div>
+        <div class="subtitle">
+            ...your favourite app to connect all thoughts
+        </div>
+        <div class="auth-btns">
+            <a href="{{ url_for('login') }}" class="log-btn">Login page</a>
+            <a href="{{ url_for('register') }}" class="reg-btn">Register page</a>
+        </div>
+    </div>
+{% endblock %}
