@@ -49,7 +49,6 @@ def folder_details(id):
         path = "<a href='/folders'>Workspace</a>" + "<span>/</span>" + path
         path += folder.name
 
-        print(path)
 
         return render_template('access/folder_details.html', folder=folder, subfolders=folder.subfolders, path=path)
 

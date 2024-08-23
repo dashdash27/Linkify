@@ -1,0 +1,42 @@
+{% macro modal_window(class_name, icon, title, inputs, desc, submit_name) %}
+
+<div class="modal-wrapper {{ class_name }}" id="modal-wrapper">
+
+    <div class="modal" id="modal">
+
+        <div class="modal-header">
+            <div class="icon">
+                {{ icon | safe }}
+            </div>
+            <button class="cross" onclick="closeModal('{{ class_name }}')">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="modal-content">
+            <div class="title">
+                {{ title }}
+            </div>
+
+            <form method="post">
+                <div class="inputs">
+                    {{ inputs | safe }}
+                </div>
+
+                <div class="desc">
+                    {{ desc | safe }}
+                </div>
+
+                <div class="btns">
+                    <button type="button" class="cancel-btn" onclick="closeModal('{{ class_name }}')">Cancel</button>
+                    <input class="submit-btn" type="submit" value="{{ submit_name }}">
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endmacro %}

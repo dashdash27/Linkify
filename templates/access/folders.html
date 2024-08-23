@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/modal.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/folder.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/context_menu.css') }}">
 {% endblock %}
 
 {% block js %}
@@ -23,14 +24,17 @@
 
         <div class="header">
             <div class="title">Workspace</div>
-            <button class="create-folder-btn" onclick="openModal()">
-                New folder
+            <button class="create-folder-btn" onclick="openModal('create-folder')">
+                New folder +
+            </button>
+            <button class="create-folder-btn" onclick="openModal('create-note')">
+                New Note +
             </button>
         </div>
 
         <div class="folders-notes">
             {% for folder in folders %}
-                <a href="/folders/{{ folder.id }}" class="folder">
+                <a href="/folders/{{ folder.id }}" class="folder" data-id="{{ folder.id }}">
                     <div class="one"></div>
                     <div class="two">
                         <div class="name">
@@ -41,44 +45,34 @@
                         </div>
                     </div>
                 </a>
+                <div id="folder-menu">
+                </div>
             {% endfor %}
         </div>
 
-        <div class="modal-wrapper" id="modal-wrapper">
+        <!--- Modal windows --->
+        {% from "modal.html" import modal_window %}
 
-            <div class="modal" id="modal">
+        <!--- create folder --->
+        {{ modal_window(
+                    'create-folder',
+                    '<i class="fa-solid fa-folder-plus fa-bounce"></i>',
+                    'New folder',
+                    '<input type="text" name="name" id="name">',
+                    'You can rename or delete it at any time',
+                    'Create'
+        ) }}
 
-                <div class="modal-header">
-                    <div class="icon">
-                        <i class="fa-solid fa-folder-plus fa-bounce"></i>
-                    </div>
-                    <button class="cross" onclick="closeModal()">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
-                </div>
+        <!--- create note --->
+        {{ modal_window(
+                    'create-note',
+                    '<i class="fa-solid fa-note-sticky fa-bounce"></i>',
+                    'New Note',
+                    '<input type="text" name="name" id="name">',
+                    'You can rename or delete it at any time',
+                    'Create'
+        ) }}
 
-                <div class="modal-content">
-                    <div class="title">New folder</div>
-
-                    <form method="post">
-                        <input type="text" name="name" id="name">
-
-                        <div class="text">
-                            You can rename or delete it at any time
-                        </div>
-
-                        <div class="btns">
-                            <button type="button" class="cancel-btn" onclick="closeModal()">Cancel</button>
-                            <input class="create-btn" type="submit" value="Create">
-                        </div>
-
-                    </form>
-
-                </div>
-
-            </div>
-
-        </div>
 
     </div>
 
