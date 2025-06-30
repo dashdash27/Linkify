@@ -1,0 +1,108 @@
+/* --- Donut --- */
+
+.donut {
+    display: flex;
+    align-items: center;
+}
+.donut .wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.donut .text {
+    width: 235px;
+}
+
+.donut .desc {
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+.donut .show-lonely {
+    font-size: 13px;
+    margin-top: 20px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.donut .show-lonely:hover {
+    color: var(--accent-color)
+}
+
+.donut-chart {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: conic-gradient(
+      var(--accent-color) 0% 28%,
+      var(--sub-color) 28% 100%
+    );
+    position: relative;
+  }
+  
+  .donut-chart .inner-round {
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 92px; /* Размер внутреннего круга */
+    height: 92px;
+    background: var(--background-color); /* Цвет внутреннего круга */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%; /* Центрирование */
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    font-weight: 600;
+  }
+
+  .no-connected-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 200px;
+    margin-top: 20px;
+    overflow: auto;
+  }
+  .no-connected-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+  .no-connected a {
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 1;
+    padding: 5px 10px;
+    background-color: var(--sub-color);
+    border-radius: 3px;
+    color: var(--main-contrast-color);
+    border-left: 3px solid transparent;
+  }
+
+  .no-connected a:hover {
+    border-left: 3px solid var(--accent-color);
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 480px) {
+  .donut .text {
+    width: 170px;
+  }
+  .donut-chart {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .donut-chart .inner-round {
+    font-size: 16px;
+    width: 72px; /* Размер внутреннего круга */
+    height: 72px;
+  }
+
+  .donut .wrapper {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

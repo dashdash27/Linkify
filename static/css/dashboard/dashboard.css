@@ -1,0 +1,45 @@
+@import "countchart.css";
+@import "donutchart.css";
+@import "barchart.css";
+@import "cluster.css";
+
+.content {
+    overflow-y: auto;
+}
+.dashboard > .title {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.dashboard .row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.dashboard .item {
+    padding: 25px;
+    border: 1px solid var(--sub-color);
+    border-radius: 5px;
+
+    animation-name: chartIn;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+}
+
+.dashboard .item .title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 480px) {
+    .dashboard .item {
+        width: 100%;
+    }
+    .dashboard .row {
+        gap:0;
+        row-gap:10px;
+    }
+}

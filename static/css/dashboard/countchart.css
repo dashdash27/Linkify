@@ -1,0 +1,91 @@
+/* --- Count ---*/
+.count {
+    height: 205px;
+    width: 330px;
+}
+
+.count .common-count {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.count .common-count .number {
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.count .common-count .text {
+    font-size: 13px;
+}
+
+.count .line {
+    margin-top: 15px;
+    display: flex;
+    gap: 5px;
+    height: 12px;
+}
+
+.count .line div {
+    background-color: var(--accent-color);
+    border-radius: 5px;
+}
+
+.count .line .notes {
+    width: 35%;
+    background-color: var(--accent-color);
+}
+
+.count .line .folders {
+    width: 40%;
+    background-color: rgb(202, 202, 202);
+}
+
+.count .line .links {
+    width: 25%;
+    background-color: rgb(168, 211, 52);
+}
+
+.count .legend {
+    margin-top: 17px;
+    display: flex;
+    align-items: center;  
+    gap: 50px;  
+}
+
+.count .legend-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.dashboard .count .legend-item .title {
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.count .legend-item .wrapper {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.count .legend-item .point {
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent-color);
+    border-radius: 3px;
+}
+
+.count .legend-item .text {
+    font-size: 16px;
+}
+
+.count .legend .folders .point {
+    background-color: rgb(202, 202, 202);
+}
+
+.count .legend .links .point {
+    background-color: rgb(168, 211, 52);
+}
