@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ note.title }}
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/toolbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/modal.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/context_menu.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/folder.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/note.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/settings.css') }}">
+    
+{% endblock %}
+
+{% block js %}
+    <script src="{{ url_for('static', filename='js/sidebar.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/settings.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/autosave.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/modal.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/links.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/text.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/editor.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/sidebar.js') }}"></script>
+{% endblock %}
+
+
+{% block body %}
+
+    {% include "parts/sidebar.html" %}
+
+    <div class="content">
+
+        <div class="header">
+            <div class="path">
+                {{ path | safe }}
+            </div>
+            <div class="btn-wrapper">
+            </div>
+                    
+        </div>
+
+        
+
+
+
+        <div class="note-header">
+            <div class="note-title" contenteditable="true" id="note-title">
+                {{ note.title }}
+            </div>
+
+
+            <button class="show-connects">
+                Show connects
+            </button>
+
+        
+            <div class="connects-block">
+
+            
+                <div class="backlinks">
+                    <div class="backlinks-title">
+                        Входящие ссылки
+                    </div>
+                    <div class="backlinks-items">
+                        {% for backlink in backlinks %}
+                            <a href="../note/{{ backlink.id }}" class="backlink">
+                                {{ backlink.title }}
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+    
+                <div class="outlinks">
+                    <div class="outlinks-title">
+                        Исходящие ссылки
+                    </div>
+                    <div class="outlinks-items">
+                        {% for outlink in outlinks %}
+                            <a href="../note/{{ outlink.id }}" class="outlink">
+                                {{ outlink.title }}
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="toolbar-wrapper">
+            {% include "parts/toolbar.html" %}
+            
+        </div>
+
+        <div class="note-content" id="note-content" contenteditable="false" data-note-id="{{ note.id }}">
+
+            {% if note.content %}
+                     {{ note.content | safe }}
+            {% else %}
+            <div class="row-block">
+                <div class="editable-block" contenteditable="true"></div>
+                <div class="side-block"> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><g fill="none" stroke="#1c1c1c" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="18" cy="19" r="3"/><circle cx="6" cy="12" r="3"/><path stroke-linecap="round" stroke-linejoin="round" d="m15.408 6.512l-6.814 3.975m6.814 7.001l-6.814-3.975"/></g></svg>
+                </div>
+                <div class="links-block"></div>
+            </div>
+            {% endif %}
+          
+        </div>
+
+
+
+    </div>
+
+    <!--- Modal windows --->
+        <div class="modal-wrapper create-link" id="modal-wrapper">
+
+            <div class="modal" id="modal">
+
+                <div class="modal-header">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="#1c1c1c" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="18" cy="19" r="3"/><circle cx="6" cy="12" r="3"/><path stroke-linecap="round" stroke-linejoin="round" d="m15.408 6.512l-6.814 3.975m6.814 7.001l-6.814-3.975"/></g></svg>
+                    </div>
+                    <button class="cross" onclick="closeModal('create-link')">
+                        <img src="{{ url_for('static', filename='img/cross.svg') }}" alt="" >
+                    </button>
+                </div>
+
+                <div class="modal-content">
+                    <div class="title">
+                        Добавить ссылки
+                    </div>
+
+                    <div name="{{ form_name }}">
+                        <div class="inputs">
+                            <input type="text" name="name" id="name" required class="search-link" id="search-link">
+                            <input type="hidden" name="form_name" value="create_link">
+                        </div>
+
+                        <div class="desc">
+                            Доступные заметки
+                        </div>
+
+                        <div class="match-notes" id="match-notes">
+                            {% for note in user_notes %}
+                                <div class="note-item">
+                                    <div class="note-item-title">
+                                        {{ note.title }}
+                                    </div>
+                                    <div class="note-item-id">
+                                        {{ note.id }}
+                                    </div>
+                                    <div class="check-mark">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path fill="none" stroke="#1c1c1c" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 12l6 6L20 6"/></svg>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="btns">
+                            <button type="button" class="cancel-btn" onclick="closeModal('create-link')">Закрыть</button>
+                            <button class="add-link-btn submit-btn">Добавить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+{% endblock %}
