@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Folders
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/modal.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/settings.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard/dashboard.css') }}">
+{% endblock %}
+
+{% block js %}
+    <script src="{{ url_for('static', filename='js/sidebar.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/settings.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/barchart.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/cluster.js') }}"></script>
+{% endblock %}
+
+
+{% block body %}
+
+    {% include "parts/sidebar.html" %}
+
+    <div class="content">
+        <div class="dashboard" data-user-id="{{ current_user.id }}">
+            <div class="title">Аналитика</div>
+            <div class="row">
+
+                <div class="item count">
+                    <div class="title">Количество элементов</div>
+                    
+                    <div class="common-count">
+                        <div class="number">
+                            {{ elements_count }}
+                        </div>
+                        <div class="text">
+                            Элементов
+                        </div>
+                    </div>
+
+                    <div class="line">
+                        <div class="notes"></div>
+                        <div class="folders"></div>
+                        <div class="links"></div>
+                    </div>
+                                
+                    <div class="legend">
+                        <div class="notes legend-item" data-count="{{ notes_count }}">
+                            <div class="title">Заметок</div>
+                            <div class="wrapper">
+                                <div class="point"></div>
+                                <div class="text">{{ notes_count }}</div>
+                            </div>
+                        </div>
+                        <div class="folders legend-item" data-count="{{ folders_count }}">
+                            <div class="title">Папок</div>
+                            <div class="wrapper">
+                                <div class="point"></div>
+                                <div class="text">{{ folders_count }}</div>
+                            </div>
+                        </div>
+                        <div class="links legend-item" data-count="{{ links_count }}">
+                            <div class="title">Ссылок</div>
+                            <div class="wrapper">
+                                <div class="point"></div>
+                                <div class="text">{{ links_count }}</div>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+
+                <div class="item donut">
+                    <div class="wrapper">
+                        <div class="donut-chart" data-percent="{{ connected_notes_percent }}">
+                            <div class="inner-round">
+                                {{ connected_notes_percent }}%
+                            </div>
+                        </div>
+                        <div class="text">
+                            <div class="title">Процент связанных заметок</div>
+                            <div class="desc"></div>
+                            <div class="show-lonely">Показать несвязанные заметки</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item no-connected" style="display: none">
+                    <div class="title">Несвязанные заметки</div>
+                    <div class="no-connected-wrapper">
+                        {% for note in notes_without_links_data %}
+                        <a href="/note/{{ note[0] }}">
+                            {{ note[1] }}
+                        </a>
+                    
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="bar item">
+                    <div class="header">
+                        <div class="title">Топ самых связанных заметок</div>
+                        <div class="select-wrapper">
+                            <div class="select-item select-item-active" data-variant="back">Входящие</div>
+                            <div class="select-item" data-variant="out">Исходящие</div>
+                            <div class="select-item" data-variant="total">Все</div>
+                        </div>
+                    </div>
+                    <div class="desc">Заметки, которые упоминались чаще всего</div>
+                    <div class="bar-chart"></div>
+                </div>
+                
+                <div class="cluster item">
+                    <div class="title">
+                        Группы заметок по связям
+                    </div>
+                    <div class="desc">
+                        В каждой группе находятся связанные друг с другом заметки
+                    </div>
+                    <div class="items"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+        
+
+
+{% endblock %}
