@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Login page
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth/auth.css') }}">
+{% endblock %}
+
+{% block js %}
+    <script src="{{ url_for('static', filename='js/show_body.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+    <form class="auth-form login-form" method="POST" action="login">
+
+
+        <div class="first-wrapper">
+
+            <a href="{{ url_for('welcome') }}" class="app-name">
+                <img src="https://cdn-icons-png.freepik.com/256/7770/7770114.png?uid=R146726643&ga=GA1.1.2066744977.1739026216&semt=ais_hybrid" alt="" class="logo">
+                <div class="text">Linkify</div>
+            </a>
+            <div class="title">
+                Вход в аккаунт
+            </div>
+    
+            {% if msg %}
+                <div class="msg-{{ msg_type }}">{{ msg }}</div>
+            {% endif %}
+    
+            <div class="input-box">
+                <div class="input-label">Email</div>
+                {% if errors and errors.get('email') %}
+                    <div class="error-message">{{ errors['email'] }}</div>
+                {% endif %}
+                <input type="email" id="email" name="email" value=" {{ email }} ">
+            </div>
+    
+            <div class="input-box">
+                <div class="input-label">Password</div>
+                {% if errors and errors.get('password') %}
+                    <div class="error-message">{{ errors['password'] }}</div>
+                {% endif %}
+                <input type="password" id="password" name="password">
+            </div>
+
+            <a class="auth-redirect" href="{{ url_for('register') }}">Еще нет аккаунта? Создать...</a>
+    
+            <input class="reg-submit submit" type="submit" value="Войти"/>
+    
+            
+        </div>
+
+        <div class="second-wrapper">
+            <img src="https://cdn-icons-png.freepik.com/256/7770/7770114.png?uid=R146726643&ga=GA1.1.2066744977.1739026216&semt=ais_hybrid" alt="" class="logo">
+        </div>
+
+    </form>
+{% endblock %}
