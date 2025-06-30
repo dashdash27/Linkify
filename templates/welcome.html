@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Linkify App
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/welcome.css') }}">
+{% endblock %}
+
+{% block js %}
+    <script src="{{ url_for('static', filename='js/show_body.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+
+    <div class="welcome">
+        <div class="welcome-header">
+            <img src="https://cdn-icons-png.freepik.com/256/7770/7770114.png?uid=R146726643&ga=GA1.1.2066744977.1739026216&semt=ais_hybrid" alt="" class="logo">
+            <div class="app-name">Linkify</div>
+        </div>
+        <div class="welcome-content">
+            <div class="text-wrapper">
+                <div class="text">Учитесь эффективнее с Linkify.</div>
+                <div class="sub-text">Удобный и функциональный сервис для связанных заметок.</div>
+                <div class="auth-btns">
+                    <a href="{{ url_for('login') }}" class="log-btn">Войти</a>
+                    <a href="{{ url_for('register') }}" class="reg-btn">Создать аккаунт</a>
+                </div>
+            </div><div class="image-wrapper">
+                <img src="{{ url_for('static', filename='img/welcome.png') }}" alt="" class="welcome-img">
+            </div>
+        </div>
+        
+    </div>
+
+    
+{% endblock %}
