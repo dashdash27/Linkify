@@ -1,0 +1,30 @@
+.context-menu {
+    display: none;
+    position: absolute;
+    width :170px;
+    height: 190px;
+    background-color: var(--background-color);
+    z-index: 100;
+    border-radius: 5px;
+    border: 1px solid var(--sub-color);
+
+    padding: 10px 7px;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.context-menu .menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    padding: 7px 10px;
+    color: var(--main-contrast-color);
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.context-menu .menu-item:hover {
+    background-color: var(--sub-color);
+}

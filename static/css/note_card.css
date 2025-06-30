@@ -1,0 +1,95 @@
+.note-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    width: 180px;
+    height: 130px;
+    border: 1px solid var(--sub-contrast-color);
+    border-radius: 5px;
+    padding: 12px 17px;
+    transition: 0.2s;
+}
+
+.note-card .note-card-header .date {
+    font-size: 9px;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.note-card .note-card-title {
+    color: var(--main-contrast-color);
+    font-weight: 600;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.note-card .note-card-content {
+    margin-top: 5px;
+    font-size: 10px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--main-contrast-color);
+    line-height: 15px;
+}
+
+.note-card .note-card-content img {
+    width: 100%;
+}
+
+.note-card:hover {
+    transform: translateY(-7px);
+    transition: 0.2s;
+}
+
+.row-block {
+    width: 100%;
+}
+
+.editable-block {
+    width: 90%;
+    outline: none;
+}
+
+.side-block {
+    display: none;
+}
+
+.links-block {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    margin-top:5px;
+    margin-bottom: 10px;
+}
+
+.link-item {
+    background-color: var(--sub-color);
+    color: var(--accent-color);
+    border-radius: 15px;
+    padding: 0 10px;
+    font-size: 8px;
+    font-weight: 600;
+    border: 1px solid var(--sub-contrast-color);
+}
+
+
+/* --- Мобильные --- */
+@media screen and (max-width: 480px) {
+    .note-card {
+        width: 150px;
+        height: 100px;
+        padding: 10px;
+    }
+    .note-card .note-card-title {
+        font-size: 10px;
+        margin-top: 3px;
+    }
+    .note-card .note-card-header .date {
+        font-size: 5px;
+    }
+    .note-card .note-card-content {
+        font-size: 4px;
+        line-height: 12px;;
+    }
+}

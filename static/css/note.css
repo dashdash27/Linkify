@@ -1,0 +1,243 @@
+.note-header {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.note-header .note-title {
+    font-weight: 600;
+    font-size: 25px;
+    position: relative;
+}
+
+.note-title {
+    outline: none;
+}
+
+.note-content::-webkit-scrollbar {
+    width: 0;
+}
+
+.note-content {
+    padding-top: 30px;
+    padding-bottom: 300px;
+    height: 650px;
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+    line-height: 28px;
+    position: relative;
+    overflow-y: auto;
+    -ms-overflow-style: none; /* IE и Edge */
+    scrollbar-width: none;
+}
+
+.editable-block {
+    outline: none;
+}
+
+.content img {
+    height: 200px;
+    border-radius: 7px;
+}
+
+.row-block {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.editable-block {
+    min-height: 1em;
+    outline: none;
+    width: 90%;
+    z-index: 1;
+}
+
+.side-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 33px; 
+    height: 33px;
+    cursor:pointer;
+    background-color: var(--sub-color);
+}
+
+.side-block:hover {
+    background-color: var(--accent-color);
+    color: white;
+    transition: 0.3s;
+}
+
+.side-block g {
+    stroke: var(--accent-color);
+}
+
+.side-block:hover g {
+    stroke: var(--sub-contrast-color);
+    transition: 0.3s;
+}
+
+.image-block {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.image-block img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- Для списка ссылок ---*/
+
+.links-block {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-top:5px;
+}
+
+.link-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--sub-color);
+    color: var(--accent-color);
+    border-radius: 15px;
+    padding: 0 17px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid var(--background-color);
+}
+
+.link-item:hover {
+    border: 1px solid var(--accent-color);
+    transition: 0.2s;
+}
+
+
+/* --- Для модального окна с ссылками */
+.match-notes {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    height: 220px;
+    overflow-y: scroll;
+}
+
+.note-item {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    
+    border: 1px solid var(--sub-color);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.note-item:active {
+    transform: scale(0.99);
+    transition: 0.1s;
+}
+
+.note-item-chosen {
+    background-color: var(--sub-color);
+    font-weight: 600;
+}
+
+.check-mark {
+    display: none;
+    font-size: 13px;
+}
+
+.note-item-chosen .check-mark {
+    display: block;
+}
+
+.note-item-id {
+    display: none;
+}
+
+.match-notes .note-item-title {
+    font-size: 13px;
+}
+
+/* --- Connects block ---*/
+.connects-block {
+    position: absolute;
+    top: 120px;
+    right: 55px;
+    width: 300px;   
+    border-radius: 5px;
+    box-shadow: 0px 1px 8px 1px rgba(34, 60, 80, 0.11);
+    border: 1px solid var(--sub-contrast-color);
+    padding: 30px 30px;
+    font-size: 13px;
+    display: none;
+    background-color: var(--background-color);
+}
+
+.connects-block-active {
+    display: block;
+    z-index: 300;
+}
+
+.backlinks-title, 
+.outlinks-title {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.backlinks-items, 
+.outlinks-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.backlink, 
+.outlink {
+    border: 1px solid var(--sub-color);
+    border-left: 3px solid var(--accent-color);
+    padding: 7px 10px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent-color)
+}
+
+.backlink:hover, 
+.outlink:hover {
+    background-color: var(--sub-color);
+}
+
+.outlinks {
+    margin-top: 20px;
+}
+
+.show-connects {
+    border: 1px solid var(--sub-contrast-color);
+    padding: 9px 18px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--main-contrast-color); 
+}
+
+@media screen and (max-width: 480px) {
+    .connects-block {
+        right: 20px;
+    }
+    .content .header .path {
+        width: 340px;
+        flex-wrap:wrap;
+        gap: 5px;
+    }
+}

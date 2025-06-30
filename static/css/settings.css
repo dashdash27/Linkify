@@ -1,0 +1,193 @@
+.settings-modal-wrapper {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content:center;
+    align-items:center;
+    background:rgba(0, 0, 0, 0.777);
+    z-index:150;
+}
+
+.settings-modal {
+    padding: 40px 45px;
+    width: 550px;
+    background-color: var(--background-color);
+    border-radius: 5px;
+    z-index: 2;
+    box-shadow: 0px 1px 8px 1px rgba(34, 60, 80, 0.11);
+}
+
+.settings-modal .header .title {
+    font-size: 18px;
+}
+
+.user-settings {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--sub-color);
+}
+
+.user-settings .user-ava {
+    width: 70px;
+}
+
+.user-settings .user-wrapper {
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+.user-settings .user-wrapper .email, 
+.user-settings .user-wrapper .username {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.user-settings .errors {
+    font-size: 12px;
+    color: var(--error-color);
+    bottom: -20px;
+    width: 200px;
+    position: absolute;
+    left: 0;
+}
+
+.user-settings .user-wrapper .text {
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.user-settings .user-wrapper .input {
+    padding: 5px 10px;
+    width: 150px;
+    border-radius: 3px;
+    background-color: var(--sub-color);
+    border: 1px solid var(--sub-color);
+    color: var(--main-contrast-color);
+    outline: none;
+}
+
+.avatar-settings {
+    margin-top: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--sub-color)
+}
+
+.avatar-settings .title {
+    font-size: 14px;
+}
+
+.avatar-settings .avatar-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.avatar-settings .avatar-items .item {
+    width: 40px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.avatar-settings .avatar-items .item:hover {
+    transform: translateY(-10px);
+    transition: 0.2s;
+}
+
+.accent-settings {
+    margin-top: 20px;
+}
+
+.accent-settings .accent-wrapper {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.accent-settings .title {
+    font-size: 14px;
+}
+
+.accent-settings .text {
+    font-size: 13px;
+    width: 290px
+}
+
+.accent-settings .picker {
+    width: 30px;
+}
+
+.input-picker {
+    border: none;
+    width: 32px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: 1px solid var(--sub-color);
+    border-radius: 50%;
+  }
+  
+  input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.buttons-settings {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttons-settings button {
+    border: 1px solid var(--sub-contrast-color);
+    padding: 9px 75px;
+    border-radius: 5px;
+    color: var(--main-contrast-color);
+    font-weight: 600;
+}
+
+.buttons-settings .active-button {
+    background-color: var(--main-contrast-color);
+    color: var(--background-color);
+}
+
+@media screen and (max-width: 480px) {
+    .settings-modal {
+        width: 95%;
+        padding: 20px 30px;
+        overflow: hidden;
+    }
+    .user-settings {
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 20px;
+    }
+    .user-settings .user-ava {
+        width: 80px;
+    }
+    .user-settings .user-wrapper {
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 150px;
+    }
+    .buttons-settings button {
+        padding: 9px 30px;
+    }
+    .accent-settings .text {
+        width: 260px;
+    }
+}

@@ -1,0 +1,7 @@
+:root {
+    --accent-color: rgb(77, 127, 237);
+    --error-color: #e97897;
+    --light-grey-color: rgb(217, 215, 215);
+    --dark-grey-color: rgb(44, 45, 45);
+    --selection-color: rgba(233, 233, 233, 0.658);
+}
