@@ -1,0 +1,135 @@
+<div class="sidebar">
+
+    <div class="user-data" data-color="{{ current_user.color }}" data-user-id="{{ current_user.id }}">
+        <img src="{{ url_for('static', filename='img/avatars/ava' + current_user.avatar + '.png') }}" alt="" class="logo">
+        <div class="user-text">
+            <div class="username">{{ current_user.name }}</div>
+            <div class="email">{{ current_user.email }}</div>
+        </div>
+        <button class="toggler">
+            <div class="close-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14 6l-6 6l6 6"/></svg>
+            </div>
+        </button>
+    </div>
+
+    <!--- Navigation --->
+    <div class="nav">
+        <a href="{{ url_for('folders') }}" class="link">
+            <div class="wrapper">
+                <div class="icon-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024">
+                        <path fill="#050505" d="M946.5 505L534.6 93.4a31.93 31.93 0 0 0-45.2 0L77.5 505c-12 12-18.8 28.3-18.8 45.3c0 35.3 28.7 64 64 64h43.4V908c0 17.7 14.3 32 32 32H448V716h112v224h265.9c17.7 0 32-14.3 32-32V614.3h43.4c17 0 33.3-6.7 45.3-18.8c24.9-25 24.9-65.5-.1-90.5"/>
+                    </svg>
+                </div>
+                <div class="text">Рабочий стол</div>
+            </div>
+        </a>
+        <a href="{{ url_for('dashboard') }}" class="link">
+            <div class="wrapper">
+                <div class="icon-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 100 100">
+                        <path fill="#050505" d="M46.05 60.163H31.923c-.836 0-1.513.677-1.513 1.513V83.61c0 .836.677 1.513 1.513 1.513H46.05c.836 0 1.512-.677 1.512-1.513V61.675c0-.836-.677-1.512-1.512-1.512m22.027-45.285H53.95c-.836 0-1.513.677-1.513 1.513v67.218c0 .836.677 1.513 1.513 1.513h14.127c.836 0 1.513-.677 1.513-1.513V16.391c0-.836-.677-1.513-1.513-1.513m22.14 20.421H76.09c-.836 0-1.513.677-1.513 1.513v46.797c0 .836.677 1.513 1.513 1.513h14.126c.836 0 1.513-.677 1.513-1.513V36.812c0-.835-.677-1.513-1.512-1.513m-66.307 0H9.783c-.836 0-1.513.677-1.513 1.513v46.797c0 .836.677 1.513 1.513 1.513H23.91c.836 0 1.513-.677 1.513-1.513V36.812c0-.835-.677-1.513-1.513-1.513"/>
+                    </svg>
+                </div>
+                <div class="text">Аналитика</div>
+            </div>
+        </a>
+        <a href="#" class="link settings-link">
+            <div class="wrapper">
+                <div class="icon-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024"><path fill="#050505" d="M512.5 390.6c-29.9 0-57.9 11.6-79.1 32.8c-21.1 21.2-32.8 49.2-32.8 79.1c0 29.9 11.7 57.9 32.8 79.1c21.2 21.1 49.2 32.8 79.1 32.8c29.9 0 57.9-11.7 79.1-32.8c21.1-21.2 32.8-49.2 32.8-79.1c0-29.9-11.7-57.9-32.8-79.1a110.96 110.96 0 0 0-79.1-32.8m412.3 235.5l-65.4-55.9c3.1-19 4.7-38.4 4.7-57.7s-1.6-38.8-4.7-57.7l65.4-55.9a32.03 32.03 0 0 0 9.3-35.2l-.9-2.6a442.5 442.5 0 0 0-79.6-137.7l-1.8-2.1a32.12 32.12 0 0 0-35.1-9.5l-81.2 28.9c-30-24.6-63.4-44-99.6-57.5l-15.7-84.9a32.05 32.05 0 0 0-25.8-25.7l-2.7-.5c-52-9.4-106.8-9.4-158.8 0l-2.7.5a32.05 32.05 0 0 0-25.8 25.7l-15.8 85.3a353.44 353.44 0 0 0-98.9 57.3l-81.8-29.1a32 32 0 0 0-35.1 9.5l-1.8 2.1a445.93 445.93 0 0 0-79.6 137.7l-.9 2.6c-4.5 12.5-.8 26.5 9.3 35.2l66.2 56.5c-3.1 18.8-4.6 38-4.6 57c0 19.2 1.5 38.4 4.6 57l-66 56.5a32.03 32.03 0 0 0-9.3 35.2l.9 2.6c18.1 50.3 44.8 96.8 79.6 137.7l1.8 2.1a32.12 32.12 0 0 0 35.1 9.5l81.8-29.1c29.8 24.5 63 43.9 98.9 57.3l15.8 85.3a32.05 32.05 0 0 0 25.8 25.7l2.7.5a448.27 448.27 0 0 0 158.8 0l2.7-.5a32.05 32.05 0 0 0 25.8-25.7l15.7-84.9c36.2-13.6 69.6-32.9 99.6-57.5l81.2 28.9a32 32 0 0 0 35.1-9.5l1.8-2.1c34.8-41.1 61.5-87.4 79.6-137.7l.9-2.6c4.3-12.4.6-26.3-9.5-35m-412.3 52.2c-97.1 0-175.8-78.7-175.8-175.8s78.7-175.8 175.8-175.8s175.8 78.7 175.8 175.8s-78.7 175.8-175.8 175.8"/></svg>
+                </div>
+                <div class="text">Настройки</div>
+            </div>
+        </a>
+        <div class="theme-toggle-wrapper">
+            <div class="icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
+                    <path fill="#050505" d="M41.149 36.156c-12.68 0-20.79-7.945-20.79-20.648c0-2.625.633-6.375 1.454-8.32c.234-.54.257-.868.257-1.102c0-.633-.468-1.336-1.359-1.336c-.281 0-.82.07-1.336.258C10.703 8.477 4.891 17.805 4.891 27.625c0 13.781 10.5 23.625 24.234 23.625c10.078 0 18.844-6.117 21.75-13.758a4.483 4.483 0 0 0 .234-1.312c0-.867-.703-1.453-1.36-1.453c-.304 0-.562.07-1.007.21c-1.804.586-4.71 1.22-7.593 1.22"/>
+                </svg>
+            </div>
+            <div class="text">Темная тема</div>
+            <input type="checkbox" class="theme-toggle-input" id="theme-toggle-input" />
+            <label class="theme-toggle-label theme-toggle" for="theme-toggle-input">Toggle</label>
+        </div>
+
+        <div class="sidebar-footer">
+            <a href="{{ url_for('logout') }}" class="logout-btn">
+                <div class="icon-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"><path fill="#050505" d="M11.25 19a.75.75 0 0 1 .75-.75h6a.25.25 0 0 0 .25-.25V6a.25.25 0 0 0-.25-.25h-6a.75.75 0 0 1 0-1.5h6c.966 0 1.75.784 1.75 1.75v12A1.75 1.75 0 0 1 18 19.75h-6a.75.75 0 0 1-.75-.75"/><path fill="#050505" d="M15.612 13.115a1 1 0 0 1-1 1H9.756c-.023.356-.052.71-.086 1.066l-.03.305a.718.718 0 0 1-1.025.578a16.844 16.844 0 0 1-4.885-3.539l-.03-.031a.721.721 0 0 1 0-.998l.03-.031a16.843 16.843 0 0 1 4.885-3.539a.718.718 0 0 1 1.025.578l.03.305c.034.355.063.71.086 1.066h4.856a1 1 0 0 1 1 1z"/></svg>
+                </div>
+                <div class="text">Выйти из аккаунта</div>
+            </a>
+            <div class="app-name">
+                <img class="black-logo" src="{{ url_for('static', filename='img/logo/logo.png') }}" alt="" class="logo">
+                <div class="text">Linkify</div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+<div class="mobile-toggler">
+    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><path fill="#050505" fill-rule="evenodd" d="M19.75 12a.75.75 0 0 0-.75-.75H5a.75.75 0 0 0 0 1.5h14a.75.75 0 0 0 .75-.75m0-5a.75.75 0 0 0-.75-.75H5a.75.75 0 0 0 0 1.5h14a.75.75 0 0 0 .75-.75m0 10a.75.75 0 0 0-.75-.75H5a.75.75 0 0 0 0 1.5h14a.75.75 0 0 0 .75-.75" clip-rule="evenodd"/></svg>
+</div>
+
+<!--- Модальное окно для настроек --->
+<div class="settings-modal-wrapper" style="display:none">
+
+    <div class="settings-modal">
+        <div class="header">
+            <div class="title">Настройки</div>
+            <div class="close"></div>
+        </div>
+        <div class="user-settings">
+            <img src="{{ url_for('static', filename='img/avatars/ava' + current_user.avatar + '.png') }}" alt="" class="user-ava" data-id="{{ current_user.avatar }}">
+            <div class="user-wrapper">
+                <div class="username">
+                    <div class="text">Username</div>
+                    <input type="text" class="input" value="{{ current_user.name }}">
+                </div>
+                <div class="email">
+                    <div class="text">Email</div>
+                    <input type="email" class="input" value="{{ current_user.email }}">
+                </div>
+                <div class="errors"></div>
+            </div>
+        </div>
+
+        <div class="avatar-settings">
+            <div class="title">Аватар</div>
+            <div class="avatar-items">
+                <img src="{{ url_for('static', filename='img/avatars/ava0.png') }}" alt="" class="item">
+                <img src="{{ url_for('static', filename='img/avatars/ava1.png') }}" alt="" class="item">
+                <img src="{{ url_for('static', filename='img/avatars/ava2.png') }}" alt="" class="item">
+                <img src="{{ url_for('static', filename='img/avatars/ava3.png') }}" alt="" class="item">
+                <img src="{{ url_for('static', filename='img/avatars/ava4.png') }}" alt="" class="item">
+                <img src="{{ url_for('static', filename='img/avatars/ava5.png') }}" alt="" class="item">
+                <img src="{{ url_for('static', filename='img/avatars/ava6.png') }}" alt="" class="item">
+                <img src="{{ url_for('static', filename='img/avatars/ava7.png') }}" alt="" class="item">
+                </div>
+        </div>
+
+        <div class="accent-settings">
+            <div class="title">Акцентный цвет</div>
+            <div class="accent-wrapper">
+                <div class="text">
+                    Выберите цвет, который будет использован во всем приложении
+                </div>
+                <div class="picker">
+                    <input type="color" class="input-picker" value="{{ current_user.color }}">
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons-settings">
+            <button class="cancel">Закрыть</button>
+            <button class="save">Сохранить</button>
+        </div>
+    </div>
+
+</div>
