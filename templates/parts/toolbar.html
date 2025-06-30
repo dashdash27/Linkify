@@ -1,0 +1,35 @@
+<div class="toolbar">
+    <button onclick="formatText('bold')" class="tool-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 1024 1024"><path fill="#050505" d="M697.8 481.4c33.6-35 54.2-82.3 54.2-134.3v-10.2C752 229.3 663.9 142 555.3 142H259.4c-15.1 0-27.4 12.3-27.4 27.4v679.1c0 16.3 13.2 29.5 29.5 29.5h318.7c117 0 211.8-94.2 211.8-210.5v-11c0-73-37.4-137.3-94.2-175.1M328 238h224.7c57.1 0 103.3 44.4 103.3 99.3v9.5c0 54.8-46.3 99.3-103.3 99.3H328zm366.6 429.4c0 62.9-51.7 113.9-115.5 113.9H328V542.7h251.1c63.8 0 115.5 51 115.5 113.9z"/></svg>
+    </button>
+    <button onclick="formatText('italic')" class="tool-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 16 16"><path fill="#050505" fill-rule="evenodd" d="M7.25 2a.75.75 0 0 0 0 1.5h1.317l-2.7 9H4.25a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5H7.433l2.7-9h1.617a.75.75 0 0 0 0-1.5z" clip-rule="evenodd"/></svg>
+    </button>
+    <button onclick="formatText('underline')" class="tool-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="#050505" d="M7 3.75a.75.75 0 0 0-1.5 0V9.5a4.5 4.5 0 1 0 9 0V3.75a.75.75 0 0 0-1.5 0V9.5a3 3 0 1 1-6 0zM5.75 15.5a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5z"/></svg>
+    </button>
+
+    <button onclick="highlightText()" class="tool-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#050505" d="M20.259 2.004a.75.75 0 0 1 .742.649l.007.102l-.004 4.497a2.254 2.254 0 0 1-2.001 2.234v2.26a2.25 2.25 0 0 1-2.096 2.245l-.154.005H16.5v2.792a2.25 2.25 0 0 1-1.14 1.958l-.155.08l-6.635 3.106a.75.75 0 0 1-1.061-.579l-.007-.1v-7.257H7.25A2.25 2.25 0 0 1 5.005 11.9L5 11.746v-2.26a2.25 2.25 0 0 1-1.994-2.072L3 7.25V2.754a.75.75 0 0 1 1.493-.102l.007.102V7.25c0 .38.282.694.648.744L5.25 8h13.501c.38 0 .695-.283.746-.649l.007-.101l.004-4.497a.75.75 0 0 1 .75-.75M15 13.996H9.003v6.077l5.567-2.606a.75.75 0 0 0 .424-.572l.008-.107zM17.502 9.5H6.5v2.246c0 .38.282.694.648.743l.102.007h9.503a.75.75 0 0 0 .743-.648l.007-.102z"/></svg>
+    </button>
+    <div class="color-palette" id="colorPalette">
+        <div class="color-swatch-wrapper">
+            <button class="color-swatch" style="background-color: rgb(234, 224, 112);"></button>
+        </div>
+        <div class="color-swatch-wrapper">
+            <button class="color-swatch" style="background-color: rgb(138, 197, 127);"></button>
+        </div>
+        <div class="color-swatch-wrapper">
+            <button class="color-swatch" style="background-color: rgb(255, 183, 200);"></button>
+        </div>
+        <div class="color-swatch-wrapper">
+            <button class="color-swatch" style="background-color: rgb(215, 219, 253);"></button>
+        </div>
+        <div class="color-swatch-wrapper">
+            <button class="color-swatch" style="background-color: rgb(188, 242, 255);"></button>
+        </div>
+        <div class="color-swatch-wrapper">
+            <svg class="color-swatch" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 1024 1024"><path fill="#050505" d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448s448-200.6 448-448S759.4 64 512 64m0 820c-205.4 0-372-166.6-372-372c0-89 31.3-170.8 83.5-234.8l523.3 523.3C682.8 852.7 601 884 512 884m288.5-137.2L277.2 223.5C341.2 171.3 423 140 512 140c205.4 0 372 166.6 372 372c0 89-31.3 170.8-83.5 234.8"/></svg>
+        </div>
+    </div>
+</div>
