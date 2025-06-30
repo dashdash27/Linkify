@@ -1,0 +1,235 @@
+@import "../base.css";
+
+body {
+    background-color: rgb(241, 243, 247);
+    height: 100vh;
+}
+
+body::before {
+    content: "";
+    background-image: url("https://img.freepik.com/premium-vector/abstract-dot-triangle-connection-backgroundvector-illustration_44526-909.jpg?uid=R146726643&ga=GA1.1.2066744977.1739026216&semt=ais_hybrid&w=740");
+    opacity: 0.7;
+    position: absolute;
+    z-index: -1;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.auth-form {
+    width: 70%;
+    height: 85%;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    border: 1px solid rgb(221, 225, 232);
+    -webkit-box-shadow: 0px 0px 6px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 0px 6px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 0px 6px 0px rgba(34, 60, 80, 0.2);
+}
+
+.auth-form .first-wrapper, 
+.auth-form .second-wrapper {
+    width: 50%;
+    height: 100%;
+}
+
+.auth-form .second-wrapper {
+    background-color: var(--accent-color);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-form .second-wrapper img {
+    width: 300px;
+}
+
+.auth-form .first-wrapper {
+    padding: 70px 100px;
+}
+
+.auth-form .first-wrapper .app-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.auth-form .first-wrapper .app-name img {
+    width: 30px;
+}
+
+.auth-form .first-wrapper .app-name .text {
+    font-size: 18px;
+    font-weight: 700;
+    color: black;
+}
+
+.auth-form .first-wrapper .title {
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.auth-form .first-wrapper .sub-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(106, 114, 133);
+    margin-top: 10px;
+    text-align: center;
+}
+
+.auth-form .first-wrapper .input-box {
+    margin-top: 15px;
+}
+
+.auth-form .first-wrapper .input-label {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.auth-form .first-wrapper input {
+    width: 100%;
+    height: 30px;
+    border: 1px solid rgb(203, 208, 223);
+    border-radius: 4px;
+    margin-top: 3px;
+    padding: 0 8px;
+}
+
+.auth-form .first-wrapper .submit {
+    margin-top: 20px;
+    background-color: var(--accent-color);
+    color: white;
+    height: 35px;
+    font-weight: 600;
+}
+
+.auth-form .auth-redirect {
+    display: block;
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--accent-color);
+    font-weight: 600;
+    text-align: center;
+}
+
+.error-message {
+    font-size: 12px;
+    color: var(--error-color)
+}
+
+.login-form .second-wrapper {
+    background-color: #e2e6ef;
+}
+
+.login-form {
+    height: 70%;
+}
+
+.login-form .second-wrapper img {
+    width: 200px;
+    display: block;
+    animation-name: blur;
+    animation-duration:3s;
+    animation-iteration-count: infinite;
+}
+
+/*.auth-form .second-wrapper {
+    display: none;
+}
+
+.auth-form {
+    width: 35%;
+}
+
+.auth-form .first-wrapper {
+    width: 100%;
+}*/
+
+.msg-success {
+    color: rgb(13, 112, 13);
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+@keyframes blur {
+    0% {
+        transform: scale(1.0);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1.0);
+    }
+}
+
+@media (orientation: portrait) {
+    .auth-form {
+        height: 70%;
+    }
+    .login-form {
+        height: 60%;
+    }
+    .auth-form .first-wrapper {
+        width: 100%;
+    }
+    .auth-form .second-wrapper {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1300px) {
+    .auth-form .first-wrapper {
+        padding: 50px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .auth-form .first-wrapper {
+        padding: 50px 70px;
+    }
+    .auth-form {
+        height: 90%;
+        width: 70%;
+    }
+    .login-form {
+        height: 65%;
+    }
+    .auth-form .first-wrapper {
+        width: 100%;
+    }
+    .auth-form .second-wrapper {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .auth-form .first-wrapper {
+        padding: 50px 30px 70px 30px;
+    }
+    .auth-form {
+        height: 75%;
+        min-height: 550px;
+        width: 90%;
+    }
+    .login-form {
+        height: 65%;
+    }
+}
