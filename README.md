@@ -1,6 +1,4 @@
-# Linkify 
-
-<img src="https://cdn-icons-png.freepik.com/128/7770/7770114.png">
+![Обложка проекта](wall.png)
 
 ## О проекте
 **Linkify** - простое, но функциональное web-приложение для работы со <span style="background-color: yellow;">связанными</span> конспектами и заметками.
