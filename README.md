@@ -1,4 +1,4 @@
-<img src="wall.png" width="100%" alt="Обложка проекта">
+<img src="picture.png" width="100%" alt="Обложка проекта">
 
 ## О проекте
 **Linkify** - простое, но функциональное web-приложение для работы со <span style="background-color: yellow;">связанными</span> конспектами и заметками.
