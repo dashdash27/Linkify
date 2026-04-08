@@ -4,6 +4,12 @@ Linkify is a web-based service for non-linear note-taking inspired by the **Zett
 
 ---
 
+### 📸 Interface Preview
+
+<img width="100%" height="1080" alt="linkify-ui" src="https://github.com/user-attachments/assets/9abe2b08-208b-4d9c-9f35-914e82b51d14" />
+
+---
+
 ### 🚀 Key Engineering Challenges
 
 #### 🔗 Complex Data Modeling
@@ -49,11 +55,11 @@ Implemented **Jinja2 Macros** to build a reusable component system (modals, cont
  	python -m venv venv
 	source venv/bin/activate  # On Windows: venv\Scripts\activate
  	```
- 3.  **Install dependencies**
+3.  **Install dependencies**
 	```bash
  	pip install -r requirements.txt
  	```
- 4.  **Run the application**
+4.  **Run the application**
 	```bash
  	python app.py
  	```
