@@ -4,20 +4,20 @@ Linkify is a web-based service for non-linear note-taking inspired by the **Zett
 
 ---
 
-## 🚀 Key Engineering Challenges
+### 🚀 Key Engineering Challenges
 
-### 🔗 Complex Data Modeling
+#### 🔗 Complex Data Modeling
 Designed a **Self-referencing (Recursive) Many-to-Many** relationship model in PostgreSQL. This allows notes to be interconnected in a non-linear graph structure, enabling bi-directional linking and deep knowledge discovery.
 
-### 📊 Dynamic Analytics Dashboard
+#### 📊 Dynamic Analytics Dashboard
 Engineered a custom data visualization panel using **Vanilla JS** (without external libraries) to track knowledge base connectivity metrics and database growth.
 
-### 🧩 Modular UI Architecture
+#### 🧩 Modular UI Architecture
 Implemented **Jinja2 Macros** to build a reusable component system (modals, context menus, navigation). This significantly reduced code duplication and improved frontend maintainability.
 
 ---
 
-## 🛠 Tech Stack
+### 🛠 Tech Stack
 
 - **Backend:** Python (Flask), PostgreSQL, SQLAlchemy (ORM).
 - **Frontend:** Vanilla JavaScript (ES6+), HTML5, CSS3 (Custom Themes).
@@ -25,7 +25,7 @@ Implemented **Jinja2 Macros** to build a reusable component system (modals, cont
 
 ---
 
-## 🎨 Features
+### 🎨 Features
 
 - **Semantic Linking:** Connect notes to create a web of knowledge.
 - **Rich Content:** Support for text formatting and image embedding.
@@ -37,7 +37,7 @@ Implemented **Jinja2 Macros** to build a reusable component system (modals, cont
 
 ---
 
-## ⚙️ Local Development Setup
+### ⚙️ Local Development Setup
 
 1. **Clone the repository:**
    ```bash
