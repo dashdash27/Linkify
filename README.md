@@ -1,57 +1,61 @@
-<img src="picture.png" width="100%" alt="Обложка проекта">
+# Linkify — Personal Knowledge Management System 🧠
 
-## О проекте
-**Linkify** - простое, но функциональное web-приложение для работы со <span style="background-color: yellow;">связанными</span> конспектами и заметками 🧠
+Linkify is a web-based service for non-linear note-taking inspired by the **Zettelkasten** method. It enables users to build a "second brain" by creating semantic links between different pieces of information, making learning and knowledge organization more effective.
 
-С помощью сервиса можно не только сохранять важные для себя факты, но и связывать их между собой. Благодяря этому ваше обучение может стать более интересным, эффективным и удобным.
+---
 
-> В основе проекта - методика Zettelcasten, но немного измененная
+## 🚀 Key Engineering Challenges
 
-### Возможности:
-- 👤 Авторизация и регистрация 
+### 🔗 Complex Data Modeling
+Designed a **Self-referencing (Recursive) Many-to-Many** relationship model in PostgreSQL. This allows notes to be interconnected in a non-linear graph structure, enabling bi-directional linking and deep knowledge discovery.
 
-- 📝 Работа с папками и заметками внутри папок 
+### 📊 Dynamic Analytics Dashboard
+Engineered a custom data visualization panel using **Vanilla JS** (without external libraries) to track knowledge base connectivity metrics and database growth.
 
-- 🎨 Форматирование текста внутри заметки (выделение курсивом, жирным, работа с цветами и т.д.)
+### 🧩 Modular UI Architecture
+Implemented **Jinja2 Macros** to build a reusable component system (modals, context menus, navigation). This significantly reduced code duplication and improved frontend maintainability.
 
-- 🖼️ Добавление картинок в контент заметки
+---
 
-- 🔗 Добавление ссылки из одной заметки на другие (ключевая функция)
-- ⚙️Настройки персонализации: 
-	- Изменение имени
-	- Выбор аватарки
-	- Выбор акцентного цвета
-	- Темная и светлая темы
+## 🛠 Tech Stack
 
-- 📊 Отдельная панель с dashboard, которая отображает важную информацию обо всех заметках пользователя
+- **Backend:** Python (Flask), PostgreSQL, SQLAlchemy (ORM).
+- **Frontend:** Vanilla JavaScript (ES6+), HTML5, CSS3 (Custom Themes).
+- **Core Features:** AJAX, Jinja2 Macros, Recursive Data Structures.
 
-Эти функции помогут вам создать собственную базу знаний, которую можно использовать и в работе, и в учебе. А раздел с аналитикой (dashboard) поможеть оценивать качество вашей базы знаний и улучшать его!
+---
 
-**Сервис имеет мобильную, планшетную и десктопную версии, пользоваться можно с любого устройства.**
+## 🎨 Features
 
-## Стек технологий
+- **Semantic Linking:** Connect notes to create a web of knowledge.
+- **Rich Content:** Support for text formatting and image embedding.
+- **Personalization:** 
+    - Light/Dark theme support.
+    - Custom accent colors and avatars.
+- **Full Responsiveness:** Optimized for Mobile, Tablet, and Desktop.
+- **Dashboard:** Real-time analytics of your note connections and progress.
 
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Jinja](https://img.shields.io/badge/jinja-white.svg?style=for-the-badge&logo=jinja&logoColor=black) ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
+---
 
+## ⚙️ Local Development Setup
 
-
-Кроме этого использовались:
-- **SQLALchemy** для удобной работы с базой данный и экономии кода
-- **Макросы** для снижения дублирования кода (для модальных окон, контекстных меню и т.д.)
-- **AJAX-запросы**
-
-> Все элементы интерфейса, анимация и интерактивные элементы в панели аналитики были созданы самостоятельно без использования сторонних библиотек
-
-## Доступ к сервису
-
-Приложение можно установить локально. Инструкция по установке и запуску приведена ниже.
-
-### Инструкция по запуску 
-1. Склонируйте код с репозитория
-`git clone https://github.com/dashdash27/Linkify.git`
-2. Откройте проект в среде разработки, например VS Code.
-3. Установите зависимости из requirements.txt
-`pip install -r requirements.txt`
-4. Запустите приложение командой 
-`python app.py.`
-5. Откройте в браузере веб-приложение по адресу http://127.0.0.1:5000
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/dashdash27/Linkify.git
+   cd linkify
+   ```
+2. **Set up a virtual environment**
+	```bash
+ 	python -m venv venv
+	source venv/bin/activate  # On Windows: venv\Scripts\activate
+ 	```
+ 3.  **Install dependencies**
+	```bash
+ 	pip install -r requirements.txt
+ 	```
+ 4.  **Run the application**
+	```bash
+ 	python app.py
+ 	```
+	
+_The app will be available at http://127.0.0.1:5000_
